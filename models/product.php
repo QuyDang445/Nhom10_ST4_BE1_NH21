@@ -21,7 +21,7 @@ public function getNew10Products(){
     $sql=self::$connection->prepare("SELECT * FROM products ORDER BY id desc limit 10");
     $sql->execute();
     $item=array();
-    $item=array();$item=$sql->get_result()->fetch_all(MYSQLI_ASSOC);
+    $item=array();$items=$sql->get_result()->fetch_all(MYSQLI_ASSOC);
     return $items;
 }
 public function search($keyword)

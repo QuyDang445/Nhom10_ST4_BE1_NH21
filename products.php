@@ -255,7 +255,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/<?php echo $value['image']?>" alt="">
+										<img src="./img/<?php echo $value['pro_image']?>" alt="">
 										<div class="product-label">
 											<span class="sale">-30%</span>
 											<span class="new">NEW</span>
@@ -263,7 +263,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#"><?php echo $value['name']?></a></h3>
+										<h3 class="product-name"><a href="detail.php?id=<?php echo $value ['id'] ?>"><?php echo $value['name'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['price']) ?></h4>
 										<div class="product-rating">
 											<i class="fa fa-star"></i>
@@ -306,5 +306,5 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-<?php include "footer.html"; ?>
+<?php include "footer.html" ?>
 
