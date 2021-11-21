@@ -82,11 +82,11 @@ $product = new Product;
                           
                       </td>
                       <td> 
-                         <img src="../img/<?php echo $value['image']?>" style="width:50px"></td>   
+                         <img src="../img/<?php echo $value['pro_image']?>" style="width:50px"></td>   
                       </td>
                       <td class="project_progress"><?php echo number_format($value['price'])?>VND
                       </td>
-                      <td class="project-state" ><?php  echo $value['description']; ?>
+                      <td class="project-state" ><?php  echo substr($value['description'],0,50);?>
                       </td>
                       <td class="project-state"><?php echo $value['manu_name']; ?>
                       </td>
