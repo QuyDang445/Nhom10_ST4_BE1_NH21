@@ -240,6 +240,15 @@
 							if(isset($_GET['keyword'])):
 								$keyword=$_GET['keyword'];
 								$search=$product->search($keyword);
+								// hiển thị 5 sản phẩm trên 1 trang
+								$perPage = 3; 				
+								// Lấy số trang trên thanh địa chỉ
+								$page =isset($_GET['page'])?$_GET['page'] :1; 			
+								// Tính tổng số dòng, ví dụ kết quả là 18
+								$total = count($search); 					
+								// lấy đường dẫn đến file hiện hành
+								$url = $_SERVER['PHP_SELF']."?keyword=".$keyword;		
+								$get3ProductByType=$product->get3ProductByType($keyword,$page,$perPage);
 								foreach ($search as $value):
 								?>
 							<!-- product -->
@@ -270,25 +279,23 @@
 										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
 									</div>
 								</div>
-		
-							</div>
-							<?php 
+								</div>
+								<?php 
 								endforeach; 
-								endif ?>
+								 ?>
+							</div>
 						<!-- /store products -->
 
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix">
 							<span class="store-qty">Showing 20-100 products</span>
 							<ul class="store-pagination">
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+								<?php echo $product->paginate($url, $total, $perPage);
+								?>
 							</ul>
 						</div>
 						<!-- /store bottom filter -->
+						<?php endif; ?>
 					</div>
 					<!-- /STORE -->
 				</div>
