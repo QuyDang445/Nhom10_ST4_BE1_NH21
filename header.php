@@ -7,7 +7,6 @@ $protype = new protype;
 $product = new Product;
 $getALLProducts = $product->getAllProducts();
 $getAllProtype=$protype->getAllProtype();
-//var_dump($getALLProducts);
 ?>
 <!DOCTYPE html>
 <html lang="en">

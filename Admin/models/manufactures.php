@@ -1,9 +1,8 @@
 <?php
-class Protype extends Db
-{
-    public function getAllProtype()
+    class Manufactures extends Db{
+    public function getAllManus()
     {
-        $sql = self::$connection->prepare("SELECT * FROM protypes");
+        $sql = self::$connection->prepare("SELECT * FROM manufactures");
         $sql->execute();
         $item = array();
         $item = array();
@@ -11,4 +10,3 @@ class Protype extends Db
         return $item;
     }
 }
-?>
