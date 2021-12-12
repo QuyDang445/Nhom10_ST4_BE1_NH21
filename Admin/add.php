@@ -11,12 +11,13 @@ if(isset($_POST['submit'])){
     $price = $_POST['price'];
     $image = $_FILES['image']['name'];
     $desc = $_POST['desc'];
+    $file_tmp =$_FILES['image']['tmp_name'];
+    $file_name = $_FILES['image']['name'];
     if($product->addProduct($name, $manu_id, $type_id, $price, $image, $desc)==true){
         echo "đã thêm thành công ";
     }else{
         echo "thất bại";
     }
-    $target_dir ="../img/";
-    $targer_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
+    $target_dir = "../img/";
+    move_uploaded_file($file_tmp, $target_dir.$file_name);
 }
