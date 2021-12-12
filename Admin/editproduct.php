@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include "header.php";
 require "config.php";
 require "models/db.php";
@@ -121,3 +122,4 @@ $product = new Product; ?>
   <!-- /.content-wrapper -->
 
   <?php include "footer.html" ?>
+
