@@ -25,7 +25,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3>Sign In</h3>
+					<h3>Register</h3>
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form action="login.php" method="post">
+					<form action="adduser.php" method="post">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -44,22 +44,19 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control" placeholder="password" name="password">
+							<input type="password" class="form-control" placeholder="Enter the password" name="password">
 						</div>
-						<div class="row align-items-center remember">
-							<input type="checkbox">Remember Me
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class=""></i></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Role ID" name="roleid">
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Login" class="btn float-left login_btn" name="submit">
-
-							<button class="btn float-right login_btn"><a href="register.php" style="text-decoration: none">Register</button>
-						</div>			
+							<input type="submit"  value="Register" class="btn float-right login_btn" name="submit">
+							<button class="btn float-left"><a href="index.php" style="text-decoration: none">Back</button>
+						</div>
 					</form>
-				</div>
-				<div class="card-footer">
-					<div class="d-flex justify-content-center">
-						<a href="#">Forgot your password?</a>
-					</div>
 				</div>
 			</div>
 		</div>
