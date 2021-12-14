@@ -220,13 +220,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
+                <a href="manufacturess.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manufactures</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
+                <a href="protypes.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Protypes</p>
                 </a>
@@ -234,13 +234,20 @@
               <li class="nav-item">
                 <a href="addproduct.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Add</p>
+                  <p>Product Add</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
+                <a href="addmanufactures.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Edit</p>
+                  <p>Manufacture Add</p>
+                </a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a href="addprotype.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Protype Add</p>
                 </a>
               </li>
             </ul>

@@ -212,25 +212,25 @@ include "header.php";
 							<ul class="hot-deal-countdown">
 								<li>
 									<div>
-										<h3>02</h3>
+										<h3 class="days">02</h3>
 										<span>Days</span>
 									</div>
 								</li>
 								<li>
 									<div>
-										<h3>10</h3>
+										<h3 class="hours">10</h3>
 										<span>Hours</span>
 									</div>
 								</li>
 								<li>
 									<div>
-										<h3>34</h3>
+										<h3 class="minutes">34</h3>
 										<span>Mins</span>
 									</div>
 								</li>
 								<li>
 									<div>
-										<h3>60</h3>
+										<h3 class="seconds">60</h3>
 										<span>Secs</span>
 									</div>
 								</li>
@@ -245,6 +245,46 @@ include "header.php";
 			</div>
 			<!-- /container -->
 		</div>
+		<script>
+			function getTimeRemaining(endtime) {
+  				var t = Date.parse(endtime) - Date.parse(new Date());
+  				var seconds = Math.floor((t / 1000) % 60);
+  				var minutes = Math.floor((t / 1000 / 60) % 60);
+  				var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  				var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  				return {
+    			'total': t,
+    			'days': days,
+    			'hours': hours,
+    			'minutes': minutes,
+    			'seconds': seconds
+  			};
+		}
+			function initializeClock(id, endtime) {
+  				var clock = document.getElementById(id);
+  				var daysSpan = clock.querySelector('.days');
+  				var hoursSpan = clock.querySelector('.hours');
+  				var minutesSpan = clock.querySelector('.minutes');
+  				var secondsSpan = clock.querySelector('.seconds');
+
+  			function updateClock() {
+    			var t = getTimeRemaining(endtime);
+    			daysSpan.innerHTML = t.days;
+    			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    			if (t.total <= 0) {
+      				clearInterval(timeinterval);
+    			}
+  			}
+  			updateClock();
+  			var timeinterval = setInterval(updateClock, 1000);
+		}
+
+			var deadline = new Date(Date.parse(new Date()) + 7 * 24 * 60 * 60 * 1000);
+			initializeClock('hot-deal', deadline);
+ 		</script>
 		<!-- /HOT DEAL SECTION -->
 
 		<!-- SECTION -->
