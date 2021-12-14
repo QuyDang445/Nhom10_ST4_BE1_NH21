@@ -23,7 +23,6 @@
 							<?php endforeach ?>
 						</div>		
 						<!-- /aside Widget -->
-
 						<!-- /aside Widget -->
 
 						<!-- aside Widget -->
@@ -76,19 +75,19 @@
 						<!-- store products -->
 						<div class="row">
 							<?php
-							if(isset($_GET['type_id'])):
-								$type_id=$_GET['type_id'];
-								$getProductByType=$product->getProductByType($type_id);
+							if(isset($_GET['manu_id'])):
+								$manu_id=$_GET['manu_id'];
+								$getProductByManu=$product->getProductByManu($manu_id);
 								// hiển thị 5 sản phẩm trên 1 trang
 								$perPage = 3; 				
 								// Lấy số trang trên thanh địa chỉ
 								$page =isset($_GET['page'])?$_GET['page'] :1; 			
 								// Tính tổng số dòng, ví dụ kết quả là 18
-								$total = count($getProductByType); 					
+								$total = count($getProductByManu); 					
 								// lấy đường dẫn đến file hiện hành
-								$url = $_SERVER['PHP_SELF']."?type_id=".$type_id;		
-								$get3ProductByType=$product->get3ProductByType($type_id,$page,$perPage);
-								foreach($get3ProductByType as $value):
+								$url = $_SERVER['PHP_SELF']."?manu_id=".$manu_id;		
+								$get3ProductByManu=$product->get3ProductByManu($manu_id,$page,$perPage);
+								foreach($get3ProductByManu as $value):
 							?>
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">

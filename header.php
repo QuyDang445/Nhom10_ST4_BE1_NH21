@@ -55,9 +55,9 @@ $getAllManus=$manu->getAllManus();
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +0123 456 789/a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 53 Võ Văn Ngân</a></li>
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
@@ -89,8 +89,6 @@ $getAllManus=$manu->getAllManus();
 								<form method="get" action="result.php">
 									<select class="input-select">
 										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
 									</select>
 									<input class="input" placeholder="Search here" name="keyword">
 									<button type="submit" class="search-btn">Search</button>

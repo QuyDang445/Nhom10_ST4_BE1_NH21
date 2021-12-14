@@ -60,6 +60,28 @@ LIMIT ?,?");
         $item = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $item;
     }
+    public function getProductByManu($manu_id)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE manu_id = ?");
+        $sql->bind_param("i", $manu_id);
+        $sql->execute();
+        $item = array();
+        $item = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $item;
+    }
+    public function get3ProductByManu($manu_id, $page, $perPage)
+    {
+        //Tính Số thứ tự trang bắt đầu
+        $firstLink = ($page - 1) * $perPage;
+
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE manu_id = ? 
+LIMIT ?,?");
+        $sql->bind_param("iii", $manu_id, $firstLink, $perPage);
+        $sql->execute();
+        $item = array();
+        $item = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $item;
+    }
     function paginate($url, $total, $perPage)
     {
         $totalLinks = ceil($total / $perPage);

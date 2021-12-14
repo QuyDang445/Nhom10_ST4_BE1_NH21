@@ -70,12 +70,6 @@ $protype = new Protype;
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm"
-                           href="">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
                       </td>
                   </tr>
                   <?php endforeach ?>
