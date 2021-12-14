@@ -3,10 +3,13 @@ require "config.php";
 require "models/db.php";
 require "models/product.php";
 require "models/protype.php";
+require "models/manufactures.php";
 $protype = new protype;
 $product = new Product;
+$manu =new Manufactures;
 $getALLProducts = $product->getAllProducts();
 $getAllProtype=$protype->getAllProtype();
+$getAllManus=$manu->getAllManus();
 ?>
 <!DOCTYPE html>
 <html lang="en">

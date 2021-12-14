@@ -23,10 +23,14 @@ class Product extends Db
     }
     public function addProduct($name, $manu_id, $type_id, $price, $image, $desc)
     {
+
         $sql = self::$connection->prepare("INSERT 
         INTO `products`(`name`, `manu_id`, `type_id`, `price`, `pro_image`, `description`) 
         VALUES (?,?,?,?,?,?)");
         $sql->bind_param("siiiss", $name, $manu_id, $type_id, $price, $image, $desc);
+        var_dump("INSERT 
+        INTO `products`(`name`, `manu_id`, `type_id`, `price`, `pro_image`, `description`) 
+        VALUES ('$name', '$manu_id', '$type_id', '$price', '$image, $desc)");
         return $sql->execute(); //return an object
     }
     public function delProduct($id)

@@ -13,5 +13,5 @@ if(isset($_POST['submit'])){
     }else{
         echo "Đăng ký thất bại";
     }
-    header('Location: login.php');
+    header('Location: index.php');
 }
