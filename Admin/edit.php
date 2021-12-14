@@ -27,5 +27,5 @@ if(isset($_POST['submit'])){
         $target_dir = "../img/";
         move_uploaded_file($file_tmp, $target_dir.$file_name);
     }
-    //header('Location: products.php');
+    header('Location: products.php');
 }
