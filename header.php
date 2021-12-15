@@ -56,12 +56,11 @@ $getAllManus=$manu->getAllManus();
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +0123 456 789/a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +0123 456 789</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 53 Võ Văn Ngân</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 53 Võ Văn Ngân TP.HCM</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 						<li><a href="login1.php"><i class="fa fa-user-o"></i> My Account <?php 
        if (isset($_SESSION['username1']) && $_SESSION['username1']){
            echo':'.$_SESSION['username1'];
