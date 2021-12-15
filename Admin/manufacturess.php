@@ -1,7 +1,4 @@
-<?php include "header.php"; ?>
-<?php require "models/db.php";
-require "models/manufactures.php";
-require "config.php";
+<?php include "header.php"; 
 $manu = new Manufactures;
 ?>
   <!-- Content Wrapper. Contains page content -->

@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 
+=======
+<?php require "config.php";
+require "models/db.php";
+require "models/product.php";
+require "models/protype.php";
+require "models/manufactures.php"; ?>
+>>>>>>> 4265610315ac29569e38dd6e5509580121a3c180
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,7 +1,4 @@
-<?php include "header.php"; ?>
-<?php require "models/db.php";
-require "models/product.php";
-require "config.php";
+<?php include "header.php"; 
 $product = new Product;
 ?>
   <!-- Content Wrapper. Contains page content -->

@@ -1,7 +1,4 @@
-<?php include "header.php"; ?>
-<?php require "models/db.php";
-require "models/protype.php";
-require "config.php";
+<?php include "header.php"; 
 $protype = new Protype;
 ?>
   <!-- Content Wrapper. Contains page content -->
