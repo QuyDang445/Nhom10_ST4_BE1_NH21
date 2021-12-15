@@ -33,4 +33,10 @@ class Manufactures extends Db
         $sql->bind_param("si", $name, $id);
         return $sql->execute(); //return an object
     }
+    public function delManufactures($id)
+    {
+        $sql = self::$connection->prepare("DELETE FROM `manufactures` WHERE `manufactures`.`manu_id` =?");
+        $sql->bind_param("i", $id);
+        return $sql->execute(); //return an object
+    }
 }

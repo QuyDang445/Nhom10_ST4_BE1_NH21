@@ -70,6 +70,12 @@ $protype = new Protype;
                               </i>
                               Edit
                           </a>
+                          <a class="btn btn-danger btn-sm"
+                           href="delprotype.php?type_id=<?php echo $value['type_id'] ?>">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
                       </td>
                   </tr>
                   <?php endforeach ?>

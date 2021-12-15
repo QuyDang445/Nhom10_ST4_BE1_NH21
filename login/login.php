@@ -8,8 +8,8 @@ if (isset ($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if ($user->checkLogin($username, $password)) {
-        $_SESSION['user'] = $username;
-        header('location:../admin');
+        $_SESSION['username'] = $username;
+        header('location:../Admin');
      } else {
         header( 'location: index.php');
      }

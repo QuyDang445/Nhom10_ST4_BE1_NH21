@@ -26,12 +26,18 @@ class Protype extends Db
     }
     public function getProtypeById($id)
     {
-        $sql = self::$connection->prepare("SELECT * FROM protypes WHERE type_id = ?");
+        $sql = self::$connection->prepare("SELECT * FROM protypes WHERE `type_id` = ?");
         $sql->bind_param("i", $id);
         $sql->execute();
         $item = array();
         $item = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $item;
+    }
+    public function delProtype($id)
+    {
+        $sql = self::$connection->prepare("DELETE FROM `protypes` WHERE `manufactures`.`manu_id` =?");
+        $sql->bind_param("i", $id);
+        return $sql->execute(); //return an object
     }
 }
 ?>
