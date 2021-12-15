@@ -6,7 +6,8 @@ class Product extends Db
         $sql = self::$connection->prepare("SELECT * 
         FROM `products`,`manufactures`,`protypes`
         WHERE `products`.`manu_id` = `manufactures`.`manu_id`
-        AND `products`.`type_id` = `protypes`.`type_id`");
+        AND `products`.`type_id` = `protypes`.`type_id`
+        ORDER BY `id` DESC");
         $sql->execute();
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -47,5 +48,12 @@ class Product extends Db
         WHERE `id` = $id");
         $sql->bind_param("siiissisi", $name,$type_id,$price,$manu_id,$image,$desc,$fea,$crat,$id);
         return $sql->execute(); //return an object
+    }
+    public function getcountProducts()
+    {
+        $sql = self::$connection->prepare("SELECT COUNT(*) AS `c_product` FROM `products`");
+        $sql->execute(); //return an object       
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
     }
 }

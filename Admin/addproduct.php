@@ -3,6 +3,7 @@ include "header.php";
 $product = new Product;
 $protype = new Protype;
 $manu = new Manufactures;
+$getAllManus  = $manu->getAllManus();
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -48,7 +49,8 @@ $manu = new Manufactures;
                 <label for="inputManuID">Manu ID</label>
                 <select id="manuid" class="form-control custom-select" name="manuid">
                   <option selected disabled>Select one</option>
-                  <?php foreach ($getAllManus as $value) :
+                  <?php
+                  foreach ($getAllManus as $value) :
                   ?>
                     <option value=<?php echo $value['manu_id'] ?>>
                       <?php echo $value['manu_name'] ?>

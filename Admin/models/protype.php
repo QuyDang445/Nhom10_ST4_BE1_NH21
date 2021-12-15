@@ -3,7 +3,7 @@ class Protype extends Db
 {
     public function getAllProtype()
     {
-        $sql = self::$connection->prepare("SELECT * FROM protypes");
+        $sql = self::$connection->prepare("SELECT * FROM protypes ORDER BY `type_id` DESC");
         $sql->execute();
         $item = array();
         $item = array();
@@ -35,9 +35,16 @@ class Protype extends Db
     }
     public function delProtype($id)
     {
-        $sql = self::$connection->prepare("DELETE FROM `protypes` WHERE `manufactures`.`manu_id` =?");
+        $sql = self::$connection->prepare("DELETE FROM `protypes` WHERE `protypes`.`type_id` =?");
         $sql->bind_param("i", $id);
         return $sql->execute(); //return an object
+    }
+    public function getcountProtypes()
+    {
+        $sql = self::$connection->prepare("SELECT COUNT(*)AS `c_protype` FROM `protypes`");
+        $sql->execute(); //return an object       
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
     }
 }
 ?>

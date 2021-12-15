@@ -11,4 +11,5 @@ if(isset($_POST['submit'])){
     }else{
         echo "thất bại";
     }
+    header( 'location: protypes.php');
 }

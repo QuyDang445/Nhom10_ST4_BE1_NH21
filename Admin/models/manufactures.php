@@ -3,7 +3,7 @@ class Manufactures extends Db
 {
     public function getAllManus()
     {
-        $sql = self::$connection->prepare("SELECT * FROM manufactures");
+        $sql = self::$connection->prepare("SELECT * FROM manufactures ORDER BY `manu_id` DESC");
         $sql->execute();
         $item = array();
         $item = array();
@@ -38,5 +38,12 @@ class Manufactures extends Db
         $sql = self::$connection->prepare("DELETE FROM `manufactures` WHERE `manufactures`.`manu_id` =?");
         $sql->bind_param("i", $id);
         return $sql->execute(); //return an object
+    }
+    public function getcountManus()
+    {
+        $sql = self::$connection->prepare("SELECT COUNT(*)AS `c_manu` FROM `manufactures`");
+        $sql->execute(); //return an object       
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
     }
 }
