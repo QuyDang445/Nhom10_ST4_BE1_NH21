@@ -47,7 +47,7 @@ include "header.php";
                             <h3 class="product-name"><?php echo $value['name'] ?></h3>
                             <h4 class="product-price"><?php echo number_format($value['price']) ?>VND</h4>
                             <h4 class="product-description ">Mô tả: <br></h4>
-                            <div> <?php echo $value['description'] ?> </div>
+                            <div><textarea rows="10" cols="70"> <?php echo $value['description'] ?> </textarea></div>
                             <div class="add-to-cart">
                                         <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                     </div>
