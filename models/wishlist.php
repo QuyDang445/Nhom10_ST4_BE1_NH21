@@ -25,4 +25,9 @@ class Wishlist extends Db{
         $sql->bind_param("s",$user_name);
         $sql->execute();
     }
+    public function delWish($wish_id) {
+        $sql= self::$connection->prepare("SELECT * FROM 'wishlist' where 'wish_id'=?");
+        $sql->bind_param("i",$wish_id);
+        return $sql->execute(); //return an object
+    }
 }

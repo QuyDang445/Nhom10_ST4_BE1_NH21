@@ -3,6 +3,7 @@ include "header.php";
 $product = new Product;
 $protype = new Protype;
 $manu = new Manufactures;
+$getAllManus  = $manu->getAllManus();
 ?>
 
 <!-- Content Wrapper. Contains page content -->
