@@ -1,13 +1,9 @@
 <?php
-require "config.php";
-require "models/db.php";
-require "models/product.php";
-require "models/protype.php";
-require "models/manufactures.php";
+include "header.php";
 $protype = new Protype;
 $manu = new Manufactures;
 $getAllManus = $manu->getAllManus();
-include "header.php";
+
 ?>
 
 <!-- Content Wrapper. Contains page content -->

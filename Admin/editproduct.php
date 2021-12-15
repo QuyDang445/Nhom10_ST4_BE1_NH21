@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 <?php include "header.php";
-require "config.php";
-require "models/db.php";
-require "models/product.php";
-require "models/manufactures.php";
-require "models/protype.php";
 $manufacture = new Manufactures;
 $protype = new Protype;
 $product = new Product; ?>

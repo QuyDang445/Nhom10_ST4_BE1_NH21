@@ -1,5 +1,8 @@
 <?php
 include "header.php";
+$product = new Product;
+$protype = new Protype;
+$manu = new Manufactures;
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -82,7 +85,7 @@ include "header.php";
               </div>
               <div class="form-group">
                 <label for="inputFeature">Feature</label>
-                <<input type="text" id="feature" class="form-control" name="feature">
+                <input type="text" id="feature" class="form-control" name="feature">
                 </select>
               </div>
 
