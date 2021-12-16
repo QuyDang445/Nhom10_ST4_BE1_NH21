@@ -1,19 +1,3 @@
-<?php
-session_start();
-require "config.php";
-require "models/db.php";
-require "models/user.php";
-$user1 = new User;
-if (isset ($_POST['submit'])) {
-    $user_name = $_POST['username1'];
-    if ($user1->checkLogin1($user_name)) {
-        $_SESSION['username1'] = $user_name;
-        header('location: index.php');
-     } else {
-        header( 'location: login1.php');
-     }
-    }
-?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -41,24 +25,20 @@ if (isset ($_POST['submit'])) {
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3>Sign In</h3>
+					<h3>Register</h3>
 				</div>
 				<div class="card-body">
-					<form action="login1.php" method="post">
+					<form action="adduser1.php" method="post">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="username" name="username1">
-						</div>
-						<div class="row align-items-center remember">
-							<input type="checkbox">Remember Me
+							<input type="text" class="form-control" placeholder="username" name="username2">
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Login" class="btn float-left login_btn" name="submit">
-
-							<button class="btn float-right login_btn"><a href="register1.php" style="text-decoration: none">Register</button>
-						</div>			
+							<input type="submit"  value="Register" class="btn float-right login_btn" name="submit2">
+							<button class="btn float-left"><a href="login1.php" style="text-decoration: none">Back</button>
+						</div>
 					</form>
 				</div>
 			</div>

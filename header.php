@@ -5,6 +5,8 @@ require "models/db.php";
 require "models/product.php";
 require "models/protype.php";
 require "models/manufactures.php";
+require "models/wishlist.php";
+$wishlist=new Wishlist;
 $protype = new protype;
 $product = new Product;
 $manu =new Manufactures;
@@ -64,9 +66,9 @@ $getAllManus=$manu->getAllManus();
 						<li><a href="login1.php"><i class="fa fa-user-o"></i> My Account <?php 
        if (isset($_SESSION['username1']) && $_SESSION['username1']){
            echo':'.$_SESSION['username1'];
+		   echo '<li><a href="logout1.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>';
        }
        ?></a></li>
-						<li><a href="logout1.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
 					</ul>
 				</div>
 			</div>
@@ -107,10 +109,9 @@ $getAllManus=$manu->getAllManus();
 							<div class="header-ctn">
 								<!-- Wishlist -->
 								<div>
-									<a href="#">
+									<a href="wishlist.php">
 										<i class="fa fa-heart-o"></i>
 										<span>Your Wishlist</span>
-										<div class="qty">2</div>
 									</a>
 								</div>
 								<!-- /Wishlist -->
@@ -120,52 +121,7 @@ $getAllManus=$manu->getAllManus();
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
-										<div class="qty">3</div>
 									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product01.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name </a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product02.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-											
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product02.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name</a></h3>
-													<h4 class="product-price"><span class="qty">2x</span>$500.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
-											<h5>SUBTOTAL: $2940.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">View Cart</a>
-											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
-										</div>
-									</div>
 								</div>
 								<!-- /Cart -->
 

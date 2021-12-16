@@ -1,10 +1,10 @@
 <?php
 require "config.php";
-require "models/db.php"
-require "models/wislist.php";
-$wislist = new Wislist;
+require "models/db.php";
+require "models/wishlist.php";
+$wishlist = new Wishlist;
 if(isset($_GET['id'])){
-    $wislist->delWish($_GET['id']);
-    header('location: wishlist.php')
+    $wishlist->delWish($_GET['id']);
+    header('location: wishlist.php');
 }
 ?>

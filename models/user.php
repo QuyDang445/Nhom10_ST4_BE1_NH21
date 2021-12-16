@@ -18,12 +18,11 @@ public function checkLogin($username, $password)
        return false;
    }
 }
-public function checkLogin1($user_name,$pass)
+public function checkLogin1($user_name)
 {
    $sql = self::$connection->prepare("SELECT * FROM wishlist
-   WHERE `user_name`=? AND `pass`=?");
-   $pass = md5( $pass);
-   $sql->bind_param("ss", $user_name,$pass);
+   WHERE `user_name`=? ");
+   $sql->bind_param("s", $user_name);
    $sql->execute(); //return an object
    //$items = array();
    $items = $sql->get_result()->num_rows;
